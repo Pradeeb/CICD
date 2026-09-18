@@ -320,3 +320,209 @@ Your Name
 
 Learning Journey:
 Full Stack Development + DevOps + CI/CD
+
+
+# 🚀 API Documentation
+
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-brightgreen)
+lds.io/badge/MySQL-8-blue
+![REST API](https://img.shields.io/badge/REST-## 🌐 Base URL
+
+```http
+http://localhost:8080/api/todos
+```
+
+---
+
+# ➕ Create Todo
+
+### Endpoint
+
+```http
+POST /api/todos
+```
+
+### Request Body
+
+```json
+{
+  "title": "Learn Jenkins",
+  "description": "Build CI/CD Pipeline",
+  "status": "PENDING"
+}
+```
+
+### Success Response ✅
+
+```json
+{
+  "id": 1,
+  "title": "Learn Jenkins",
+  "description": "Build CI/CD Pipeline",
+  "status": "PENDING",
+  "createdAt": "2026-09-18T10:30:00"
+}
+```
+
+---
+
+# 📋 Get All Todos
+
+### Endpoint
+
+```http
+GET /api/todos
+```
+
+### Success Response ✅
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Learn Jenkins",
+    "description": "Build CI/CD Pipeline",
+    "status": "PENDING",
+    "createdAt": "2026-09-18T10:30:00"
+  },
+  {
+    "id": 2,
+    "title": "Learn Docker",
+    "description": "Containerize Application",
+    "status": "IN_PROGRESS",
+    "createdAt": "2026-09-18T11:00:00"
+  }
+]
+```
+
+---
+
+# 🔍 Get Todo By ID
+
+### Endpoint
+
+```http
+GET /api/todos/{id}
+```
+
+### Example
+
+```http
+GET /api/todos/1
+```
+
+### Success Response ✅
+
+```json
+{
+  "id": 1,
+  "title": "Learn Jenkins",
+  "description": "Build CI/CD Pipeline",
+  "status": "PENDING",
+  "createdAt": "2026-09-18T10:30:00"
+}
+```
+
+---
+
+# ✏️ Update Todo
+
+### Endpoint
+
+```http
+PUT /api/todos/{id}
+```
+
+### Example
+
+```http
+PUT /api/todos/1
+```
+
+### Request Body
+
+```json
+{
+  "title": "Learn Jenkins CI/CD",
+  "description": "Automate Build and Deployment",
+  "status": "IN_PROGRESS"
+}
+```
+
+### Success Response ✅
+
+```json
+{
+  "id": 1,
+  "title": "Learn Jenkins CI/CD",
+  "description": "Automate Build and Deployment",
+  "status": "IN_PROGRESS",
+  "createdAt": "2026-09-18T10:30:00"
+}
+```
+
+---
+
+# 🗑️ Delete Todo
+
+### Endpoint
+
+```http
+DELETE /api/todos/{id}
+```
+
+### Example
+
+```http
+DELETE /api/todos/1
+```
+
+### Success Response ✅
+
+```json
+{
+  "message": "Todo deleted successfully"
+}
+```
+
+---
+
+# 📊 Status Values
+
+| Status | Description |
+|----------|----------|
+| 🟡 PENDING | Task Created |
+| 🔵 IN_PROGRESS | Work Started |
+| ✅ COMPLETED | Task Finished |
+
+---
+
+# 🧪 Sample API Testing Flow
+
+```text
+1️⃣ POST    /api/todos
+      ↓
+2️⃣ GET     /api/todos
+      ↓
+3️⃣ GET     /api/todos/1
+      ↓
+4️⃣ PUT     /api/todos/1
+      ↓
+5️⃣ DELETE  /api/todos/1
+```
+
+---
+
+## 🎯 API Summary
+
+| Method | URL | Description |
+|---------|------|------------|
+| POST | `/api/todos` | Create Todo |
+| GET | `/api/todos` | Get All Todos |
+| GET | `/api/todos/{id}` | Get Todo By ID |
+| PUT | `/api/todos/{id}` | Update Todo |
+| DELETE | `/api/todos/{id}` | Delete Todo |
+
+✅ Ready for Postman Testing  
+✅ Ready for Dockerization  
+✅ Ready for Jenkins CI/CD Pipeline
